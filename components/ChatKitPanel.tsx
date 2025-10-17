@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ChatKit, useChatKit } from "@openai/chatkit-react";
+// import type { ChatKitOptions } from "@openai/chatkit";
 import {
   STARTER_PROMPTS,
   PLACEHOLDER_INPUT,
@@ -43,7 +44,7 @@ const createInitialErrors = (): ErrorState => ({
 });
 
 export function ChatKitPanel({
-  theme,
+  // theme,
   onWidgetAction,
   onResponseEnd,
   onThemeRequest,
@@ -256,20 +257,38 @@ export function ChatKitPanel({
 
   const chatkit = useChatKit({
     api: { getClientSecret },
+    // theme: {
+    //   colorScheme: theme,
+    //   color: {
+    //     grayscale: {
+    //       hue: 220,
+    //       tint: 6,
+    //       shade: theme === "dark" ? -1 : -4,
+    //     },
+    //     accent: {
+    //       primary: theme === "dark" ? "#f1f5f9" : "#0f172a",
+    //       level: 1,
+    //     },
+    //   },
+    //   radius: "round",
+    // },
     theme: {
-      colorScheme: theme,
-      color: {
-        grayscale: {
-          hue: 220,
-          tint: 6,
-          shade: theme === "dark" ? -1 : -4,
-        },
-        accent: {
-          primary: theme === "dark" ? "#f1f5f9" : "#0f172a",
-          level: 1,
-        },
-      },
-      radius: "round",
+      colorScheme: 'dark',
+      radius: 'round',
+      density: 'spacious',
+      typography: {
+        baseSize: 16,
+        fontFamily: 'Inter, sans-serif',
+        fontSources: [
+          {
+            family: 'Inter',
+            src: 'https://rsms.me/inter/font-files/Inter-Regular.woff2',
+            weight: 400,
+            style: 'normal'
+          }
+        // ...and 3 more font sources
+        ]
+      }
     },
     startScreen: {
       greeting: GREETING,

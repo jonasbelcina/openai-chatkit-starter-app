@@ -1,21 +1,75 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F4F1EA; /* Warm Ivory */
+  --foreground: #3A3A3A; /* Charcoal */
+  --headings-serif: #1D3B2A; /* Deep Forest */
+  --body-text: #3A3A3A; /* Charcoal */
+  --accent: #C0A060; /* Antique Gold */
+  --secondary-accent: #9C9C81; /* Sage */
+	--highlight-dot: #C0A060; /* Antique Gold */
+  --links-hover: #6A1F1B; /* Bordeaux */
   color-scheme: light;
+
+  --chat--color--primary: var(--accent);
+  --chat--color--secondary: var(--secondary-accent);
+  --chat--color-light: rgb(192 160 96 / 20%);
+  --chat--color-dark: rgb(192 160 96 / 20%);
+  --chat--header--background: var(--headings-serif);
+  --chat--header--color: var(--background);
+  --chat--header-height: 0px;
+  --chat--header--padding: 0px;
+  --chat--message--bot--background: var(--background);
+  --chat--message--bot--color: var(--foreground);
+  --chat--message--user--background: #1D3B2A;
+  --chat--message--user--color: #B8AFA2;
+  --chat--font-family: var(--font-sans);
+}
+
+:root[data-color-scheme="light"] {
+	--chat--header-height: 0px;
+  --chat--header--padding: 0px;
+	--chat--body--background: rgb(192 160 96 / 20%);
+	--chat--message--user--background: #1D3B2A; /* User message background in dark mode */
+  --chat--message--user--color: #fff; /* User message text in dark mode */
+	--chat--color-light-shade-100: #3f4043;
+	--chat--footer--background: transparent;
+	--chat--input--background: rgb(192 160 96 / 20%);
+	--chat--input--send--button--background: #1D3B2A;
+	--chat--input--send--button--color: #EAE3D2;
 }
 
 :root[data-color-scheme="dark"] {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+  --background: #0F0E0E; /* Charcoal Black */
+  --foreground: #B8AFA2; /* Warm Gray */
+  --headings-serif: #EAE3D2; /* Bone White */
+  --accent: #7A3E2F; /* Deep Burgundy */
+  --secondary-accent: #B4975A; /* Muted Gold */
+  --highlight-dot: #C14E37; /* Vintage Red */
   color-scheme: dark;
+
+	--chat--header-height: 0px;
+  --chat--header--padding: 0px;
+  --chat--color-light: rgb(184 175 162 / 10%);
+  --chat--header--color: var(--background);
+  --chat--message--bot--background: var(--foreground); /* Light background for bot messages in dark mode */
+  --chat--message--bot--color: var(--background); /* Dark text for bot messages in dark mode */
+  --chat--message--user--background: #1D3B2A; /* User message background in dark mode */
+  --chat--message--user--color: var(--foreground); /* User message text in dark mode */
+	--chat--input--background: rgb(255, 255, 255 / 50%);
+	--chat--color-light-shade-100: #3f4043;
+	--chat--input--send--button--background: var(--headings-serif);
+	--chat--input--send--button--color: #1D3B2A;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-color-scheme]) {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0F0E0E; /* Charcoal Black */
+    --foreground: #B8AFA2; /* Warm Gray */
+    --headings-serif: #EAE3D2; /* Bone White */
+    --accent: #7A3E2F; /* Deep Burgundy */
+    --secondary-accent: #B4975A; /* Muted Gold */
+    --highlight-dot: #C14E37; /* Vintage Red */
     color-scheme: dark;
   }
 }

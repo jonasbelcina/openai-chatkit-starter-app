@@ -10,8 +10,18 @@ export const STARTER_PROMPTS: StartScreenPrompt[] = [
     prompt: "What can you do?",
     icon: "circle-question",
   },
+	{
+    label: "I want to see your automations.",
+    prompt: "I want to see your automations.",
+    icon: "circle-question",
+  },
+  {
+    label: "I want to book a meeting.",
+    prompt: "I want to book a meeting.",
+    icon: "calendar",
+  }
 ];
 
 export const PLACEHOLDER_INPUT = "Ask anything...";
 
-export const GREETING = "How can I help you today?";
+export const GREETING = "👋 Hi there! I’m your AI assistant from JiwonAI. I can show you how automation can save your business time and money — or even give you a quick demo of our chatbots and workflow automations.";

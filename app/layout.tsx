@@ -1,10 +1,11 @@
 import Script from "next/script";
 import type { Metadata } from "next";
 import "./globals.css";
+// import Header from "@/components/Header";
 
 export const metadata: Metadata = {
-  title: "AgentKit demo",
-  description: "Demo of ChatKit with hosted workflow",
+  title: "LucasFather | AI & Automation Developer",
+  description: "The personal website of Jonas Belcina (LucasFather) — Web Developer & AI Automation Consultant.",
 };
 
 export default function RootLayout({
@@ -20,7 +21,10 @@ export default function RootLayout({
           strategy="beforeInteractive"
         />
       </head>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased bg-[var(--background)]">
+        {/* <Header /> */}
+        {children}
+      </body>
     </html>
   );
 }
